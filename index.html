@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>授業料自動計算</title>
+</head>
+<body>
+
+<div class="center">
+    <div class="number_chooser">
+        <label for="num_students_selector">ご子弟の数:</label>
+        <select name="num_students_selector" id="num_students_selector">
+            <option value="0">選択してください</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div id="warning" style="display: none">学年が高い子弟から順番に入力してください</div>
+    <div id="header" style="display: none">
+        <div class="property_item_div student_id">　</div>
+        <div class="property_item_div grade">学年</div>
+        <div class="property_item_div math">算数</div>
+        <div class="property_item_div base">授業料</div>
+        <div class="property_item_div discount">割引</div>
+        <div class="property_item_div subtotal">小計</div>
+    </div>
+    <div id="student_properties_div"></div>
+    <div id="total_div">
+        <div class="sum calc"></div>
+        <div class="final calc"></div>
+    </div>
+</div>
+
+<div id="property_template" class="property_template_div" style="display: none">
+    <div class="property_item_div student_id">子弟</div>
+    <div class="property_item_div grade" >
+        <select class="grade_selector">
+            <option value="elementary_or_above">小学生以上</option>
+            <option value="nenchu">年中・年長</option>
+            <option value="nensho">年少</option>
+        </select>
+    </div>
+    <div class="property_item_div math">
+        <input type="checkbox" class="math_checkbox" name="math_checkbox" value="math">
+    </div>
+    <div class="property_item_div base" data-price="0">
+    </div>
+    <div class="property_item_div discount" data-price="0">
+    </div>
+    <div class="property_item_div subtotal" data-price="0">
+    </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
